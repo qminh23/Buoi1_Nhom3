@@ -33,7 +33,7 @@ int ham_bai_1(void)
     uint32_t *pRccCfgrReg = (uint32_t *) RCC_CFGR_REG_ADDR;
 
     // 1. Xóa các vị trí bit 21 và 22 để chọn tín hiệu nội bộ làm nguồn xuất ra
-    *pRccCfgrReg &= ~(0x3 << 21);
+    *pRccCfgrReg  &= ~(0x3 << 21);
 
     // 2. Cấu hình bộ chia tần số (Đặt giá trị chia 4)
     *pRccCfgrReg |= (1 << 25);

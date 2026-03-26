@@ -48,7 +48,7 @@ int main(void) {
 
     // 1. Chọn dao động thạch anh ngoài làm nguồn xuất ra (bit 21 và 22)
     *pRccCfgrReg &= ~(0x3 << 21); // BƯỚC XÓA: Xóa sạch cả bit 21 và 22
-    *pRccCfgrReg |= (0x2 << 21);  // BƯỚC ĐẶT: Ghi giá trị nhị phân 10 vào cụm bit này
+    *pRccCfgrReg  |= (0x2 << 21);  // BƯỚC ĐẶT: Ghi giá trị nhị phân 10 vào cụm bit này
 
     // Cấu hình bộ chia tần số là chia 4 (bit 24, 25, 26 mang giá trị nhị phân 110)
     *pRccCfgrReg &= ~(0x7 << 24); // BƯỚC XÓA: Xóa sạch cụm 3 bit
