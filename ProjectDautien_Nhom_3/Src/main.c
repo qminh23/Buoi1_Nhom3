@@ -31,14 +31,14 @@ int main(void)
     Ucglib4WireSWSPI_begin(&ucg, UCG_FONT_MODE_SOLID);
     ucg_ClearScreen(&ucg);
 
-    ucg_SetFont(&ucg, ucg_font_helvR08_tf); // Lựa chọn font chữ và cỡ chữ
+    ucg_SetFont(&ucg, ucg_font_helvR14_tr); // Lựa chọn font chữ và cỡ chữ
     ucg_SetColor(&ucg, 0, 255, 255, 255);   // Chọn màu chữ là màu trắng (R=255, G=255, B=255)
     ucg_SetColor(&ucg, 1, 0, 0, 0);         // Chọn màu nền (background) là màu đen (R=0, G=0, B=0)
     ucg_SetRotate180(&ucg);                 // Quay màn hình lại 180 độ (tùy chiều cắm cáp)
 
     // In chữ ra tọa độ (x, y) trên LCD
-    ucg_DrawString(&ucg, 0, 12, 0, "I love Embedded");
-    ucg_DrawString(&ucg, 0, 26, 0, "Programming");
+    ucg_DrawString(&ucg, 0, 60, 0, "I love Embedded");
+    ucg_DrawString(&ucg, 0, 70, 0, "Programming");
 
     /* Loop forever */
     while(1)

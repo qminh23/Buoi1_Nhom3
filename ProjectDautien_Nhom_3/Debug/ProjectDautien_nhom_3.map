@@ -27,7 +27,7 @@ Archive member included to satisfy reference by file (symbol)
 /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel.o)
                               ./Src/main.o (ucg_SetColor)
 /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel_font_data.o)
-                              ./Src/main.o (ucg_font_helvR08_tf)
+                              ./Src/main.o (ucg_font_helvR14_tr)
 /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_rotate.o)
                               ./Src/main.o (ucg_SetRotate180)
 /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(stm32f401re_gpio.o)
@@ -1457,6 +1457,8 @@ Discarded input sections
                 0x00000000      0xaaa /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel_font_data.o)
  .rodata.ucg_font_helvR08_hr
                 0x00000000      0x4f7 /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel_font_data.o)
+ .rodata.ucg_font_helvR08_tf
+                0x00000000      0x88b /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel_font_data.o)
  .rodata.ucg_font_helvR08_tr
                 0x00000000      0x40b /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel_font_data.o)
  .rodata.ucg_font_helvR10_hf
@@ -1481,8 +1483,6 @@ Discarded input sections
                 0x00000000      0x85c /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel_font_data.o)
  .rodata.ucg_font_helvR14_tf
                 0x00000000      0xebf /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel_font_data.o)
- .rodata.ucg_font_helvR14_tr
-                0x00000000      0x6c8 /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel_font_data.o)
  .rodata.ucg_font_helvR18_hf
                 0x00000000     0x188d /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel_font_data.o)
  .rodata.ucg_font_helvR18_hr
@@ -2759,7 +2759,7 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
 .iplt           0x080031e8        0x0
  .iplt          0x080031e8        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x080031e8      0x9b8
+.rodata         0x080031e8      0x7f4
                 0x080031e8                        . = ALIGN (0x4)
  *(.rodata)
  .rodata        0x080031e8       0x1c ./Src/main.o
@@ -2795,54 +2795,53 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  *fill*         0x080032e7        0x1 
  .rodata.ucg_tft_128x160_st7735_init_seq
                 0x080032e8       0x2c /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_dev_tft_128x128_st7735.o)
- .rodata.ucg_font_helvR08_tf
-                0x08003314      0x88b /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel_font_data.o)
-                0x08003314                ucg_font_helvR08_tf
-                0x08003ba0                        . = ALIGN (0x4)
- *fill*         0x08003b9f        0x1 
+ .rodata.ucg_font_helvR14_tr
+                0x08003314      0x6c8 /Users/macos/Downloads/SDK_1.0.3_NUCLEO-F401RE/lib_stm/libLibraries.a(ucg_pixel_font_data.o)
+                0x08003314                ucg_font_helvR14_tr
+                0x080039dc                        . = ALIGN (0x4)
 
-.ARM.extab      0x08003ba0        0x0
-                0x08003ba0                        . = ALIGN (0x4)
+.ARM.extab      0x080039dc        0x0
+                0x080039dc                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08003ba0                        . = ALIGN (0x4)
+                0x080039dc                        . = ALIGN (0x4)
 
-.ARM            0x08003ba0        0x0
-                0x08003ba0                        . = ALIGN (0x4)
-                0x08003ba0                        __exidx_start = .
+.ARM            0x080039dc        0x0
+                0x080039dc                        . = ALIGN (0x4)
+                0x080039dc                        __exidx_start = .
  *(.ARM.exidx*)
-                0x08003ba0                        __exidx_end = .
-                0x08003ba0                        . = ALIGN (0x4)
+                0x080039dc                        __exidx_end = .
+                0x080039dc                        . = ALIGN (0x4)
 
-.preinit_array  0x08003ba0        0x0
-                0x08003ba0                        . = ALIGN (0x4)
-                0x08003ba0                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080039dc        0x0
+                0x080039dc                        . = ALIGN (0x4)
+                0x080039dc                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08003ba0                        PROVIDE (__preinit_array_end = .)
-                0x08003ba0                        . = ALIGN (0x4)
+                0x080039dc                        PROVIDE (__preinit_array_end = .)
+                0x080039dc                        . = ALIGN (0x4)
 
-.init_array     0x08003ba0        0x4
-                0x08003ba0                        . = ALIGN (0x4)
-                0x08003ba0                        PROVIDE (__init_array_start = .)
+.init_array     0x080039dc        0x4
+                0x080039dc                        . = ALIGN (0x4)
+                0x080039dc                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08003ba0        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x08003ba4                        PROVIDE (__init_array_end = .)
-                0x08003ba4                        . = ALIGN (0x4)
+ .init_array    0x080039dc        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x080039e0                        PROVIDE (__init_array_end = .)
+                0x080039e0                        . = ALIGN (0x4)
 
-.fini_array     0x08003ba4        0x4
-                0x08003ba4                        . = ALIGN (0x4)
+.fini_array     0x080039e0        0x4
+                0x080039e0                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08003ba4        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x080039e0        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x08003ba8                        . = ALIGN (0x4)
-                0x08003ba8                        _sidata = LOADADDR (.data)
+                0x080039e4                        . = ALIGN (0x4)
+                0x080039e4                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x08003ba8        0x0
- .rel.iplt      0x08003ba8        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x080039e4        0x0
+ .rel.iplt      0x080039e4        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000        0x8 load address 0x08003ba8
+.data           0x20000000        0x8 load address 0x080039e4
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -2858,11 +2857,11 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  *fill*         0x20000005        0x3 
                 0x20000008                        _edata = .
 
-.igot.plt       0x20000008        0x0 load address 0x08003bb0
+.igot.plt       0x20000008        0x0 load address 0x080039ec
  .igot.plt      0x20000008        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.100.202509120712/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x20000008                        . = ALIGN (0x4)
 
-.bss            0x20000008     0x1274 load address 0x08003bb0
+.bss            0x20000008     0x1274 load address 0x080039ec
                 0x20000008                        _sbss = .
                 0x20000008                        __bss_start__ = _sbss
  *(.bss)
@@ -2888,7 +2887,7 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
                 0x2000127c                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x2000127c      0x604 load address 0x08003bb0
+                0x2000127c      0x604 load address 0x080039ec
                 0x20001280                        . = ALIGN (0x8)
  *fill*         0x2000127c        0x4 
                 [!provide]                        PROVIDE (end = .)

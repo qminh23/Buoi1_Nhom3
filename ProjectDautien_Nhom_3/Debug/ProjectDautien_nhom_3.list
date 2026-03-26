@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00003054  08000194  08000194  00001194  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       000009b8  080031e8  080031e8  000041e8  2**2
+  2 .rodata       000007f4  080031e8  080031e8  000041e8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08003ba0  08003ba0  00005008  2**0
+  3 .ARM.extab    00000000  080039dc  080039dc  00005008  2**0
                   CONTENTS, READONLY
-  4 .ARM          00000000  08003ba0  08003ba0  00005008  2**0
+  4 .ARM          00000000  080039dc  080039dc  00005008  2**0
                   CONTENTS, READONLY
-  5 .preinit_array 00000000  08003ba0  08003ba0  00005008  2**0
+  5 .preinit_array 00000000  080039dc  080039dc  00005008  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08003ba0  08003ba0  00004ba0  2**2
+  6 .init_array   00000004  080039dc  080039dc  000049dc  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  08003ba4  08003ba4  00004ba4  2**2
+  7 .fini_array   00000004  080039e0  080039e0  000049e0  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         00000008  20000000  08003ba8  00005000  2**2
+  8 .data         00000008  20000000  080039e4  00005000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00001274  20000008  08003bb0  00005008  2**2
+  9 .bss          00001274  20000008  080039ec  00005008  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  2000127c  08003bb0  0000527c  2**0
+ 10 ._user_heap_stack 00000604  2000127c  080039ec  0000527c  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00005008  2**0
                   CONTENTS, READONLY
@@ -1154,7 +1154,7 @@ int main(void)
  80007c2:	4816      	ldr	r0, [pc, #88]	@ (800081c <main+0x70>)
  80007c4:	f000 fc25 	bl	8001012 <ucg_ClearScreen>
 
-    ucg_SetFont(&ucg, ucg_font_helvR08_tf); // Lựa chọn font chữ và cỡ chữ
+    ucg_SetFont(&ucg, ucg_font_helvR14_tr); // Lựa chọn font chữ và cỡ chữ
  80007c8:	4915      	ldr	r1, [pc, #84]	@ (8000820 <main+0x74>)
  80007ca:	4814      	ldr	r0, [pc, #80]	@ (800081c <main+0x70>)
  80007cc:	f001 fd3a 	bl	8002244 <ucg_SetFont>
@@ -1179,19 +1179,19 @@ int main(void)
  80007f2:	f001 ff01 	bl	80025f8 <ucg_SetRotate180>
 
     // In chữ ra tọa độ (x, y) trên LCD
-    ucg_DrawString(&ucg, 0, 12, 0, "I love Embedded");
+    ucg_DrawString(&ucg, 0, 60, 0, "I love Embedded");
  80007f6:	4b0b      	ldr	r3, [pc, #44]	@ (8000824 <main+0x78>)
  80007f8:	9300      	str	r3, [sp, #0]
  80007fa:	2300      	movs	r3, #0
- 80007fc:	220c      	movs	r2, #12
+ 80007fc:	223c      	movs	r2, #60	@ 0x3c
  80007fe:	2100      	movs	r1, #0
  8000800:	4806      	ldr	r0, [pc, #24]	@ (800081c <main+0x70>)
  8000802:	f001 fc5b 	bl	80020bc <ucg_DrawString>
-    ucg_DrawString(&ucg, 0, 26, 0, "Programming");
+    ucg_DrawString(&ucg, 0, 70, 0, "Programming");
  8000806:	4b08      	ldr	r3, [pc, #32]	@ (8000828 <main+0x7c>)
  8000808:	9300      	str	r3, [sp, #0]
  800080a:	2300      	movs	r3, #0
- 800080c:	221a      	movs	r2, #26
+ 800080c:	2246      	movs	r2, #70	@ 0x46
  800080e:	2100      	movs	r1, #0
  8000810:	4802      	ldr	r0, [pc, #8]	@ (800081c <main+0x70>)
  8000812:	f001 fc53 	bl	80020bc <ucg_DrawString>
@@ -1300,7 +1300,7 @@ LoopForever:
   ldr r1, =_edata
  800086c:	20000008 	.word	0x20000008
   ldr r2, =_sidata
- 8000870:	08003ba8 	.word	0x08003ba8
+ 8000870:	080039e4 	.word	0x080039e4
   ldr r2, =_sbss
  8000874:	20000008 	.word	0x20000008
   ldr r4, =_ebss
@@ -6061,10 +6061,10 @@ Infinite_Loop:
  80031ba:	4798      	blx	r3
  80031bc:	3601      	adds	r6, #1
  80031be:	e7f2      	b.n	80031a6 <__libc_init_array+0x1e>
- 80031c0:	08003ba0 	.word	0x08003ba0
- 80031c4:	08003ba0 	.word	0x08003ba0
- 80031c8:	08003ba0 	.word	0x08003ba0
- 80031cc:	08003ba4 	.word	0x08003ba4
+ 80031c0:	080039dc 	.word	0x080039dc
+ 80031c4:	080039dc 	.word	0x080039dc
+ 80031c8:	080039dc 	.word	0x080039dc
+ 80031cc:	080039e0 	.word	0x080039e0
 
 080031d0 <_init>:
  80031d0:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
